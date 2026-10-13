@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "PaveToken",
+    "name": "GLOBAL INK",
+    "symbol": "PAVE",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8800,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0x12a7aad083cef06fef7c295514b52fc8bc81960d"
+  },
+  "notes": "PaveToken (src/PaveToken.sol) is a plain fixed-supply ERC-20: name GLOBAL INK, symbol PAVE, 18 decimals. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 PAVE (1000000000000000000000000000 minor units) once to msg.sender, which at launch is the ProjectFactory. There is no owner, minter, pause, blacklist, freeze, burnFrom or upgrade path, and no transfer fee or tax, so every launch flow (factory to MerkleDistributor, pool seed through the PoolManager, distributor claims, trader swaps) moves exactly what it says and nothing needs exempting. Holders may burn their own tokens, so the supply can only shrink after deployment. No application contracts are deployed with this launch. The pool pairs with IMD at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7; the deployer derives the opening price from economics.initialMarketCapWei and the supply, and pool.initialPrice is provenance only."
+}
